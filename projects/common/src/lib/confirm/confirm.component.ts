@@ -1,12 +1,12 @@
 import { Component, Input, EventEmitter, Output, ViewChild } from '@angular/core';
-import { IDialogEventArgs, IgxDialogComponent, IgxDialogModule } from '@infragistics/igniteui-angular';
+import { IDialogEventArgs, IgxComboModule, IgxDialogComponent, IgxDialogModule, IgxSimpleComboComponent } from '@infragistics/igniteui-angular';
 
 @Component({
     selector: 'bg-confirm',
     templateUrl: './confirm.component.html',
     styleUrls: ['./confirm.component.css'],
     standalone: true,
-    imports: [IgxDialogModule]
+    imports: [IgxDialogModule, IgxComboModule]
 })
 export class ConfirmComponent {
   @Input()
@@ -40,8 +40,10 @@ export class ConfirmComponent {
   }
 
   public open(entity?) {
+    const test: IgxSimpleComboComponent = null;
+
     this.confirmEntity = entity;
-    this.dialog.open();
+    this.dialog.open({ modal: !!test.value, closeOnEscape: !!test.selection});
   }
 }
 

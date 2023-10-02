@@ -3,7 +3,7 @@ import { isPlatformBrowser, NgOptimizedImage } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { BaseComponent } from '../../../../bellumgens/src/app/base/base.component';
-import { IgxCardModule } from '@infragistics/igniteui-angular';
+import { IgxCardModule, IgxComboModule } from '@infragistics/igniteui-angular';
 
 @Component({
     selector: 'app-news',
@@ -12,7 +12,8 @@ import { IgxCardModule } from '@infragistics/igniteui-angular';
     standalone: true,
     imports: [
       NgOptimizedImage,
-      IgxCardModule
+      IgxCardModule,
+      IgxComboModule
     ]
 })
 export class NewsComponent extends BaseComponent {

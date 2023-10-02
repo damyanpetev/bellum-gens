@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { SearchResult, ApiSearchService } from '../../../../../common/src/public_api';
-import { IgxIconService, IgxListModule, IgxProgressBarModule, IgxAvatarModule, IgxIconModule, IgxButtonModule, IgxRippleModule } from '@infragistics/igniteui-angular';
+import { IgxIconService, IgxListModule, IgxProgressBarModule, IgxAvatarModule, IgxIconModule, IgxButtonModule, IgxRippleModule, IgxSimpleComboComponent } from '@infragistics/igniteui-angular';
 import { ReduceQuickSearchResultPipe } from '../../pipes/reduce-quick-search-result.pipe';
 import { PlayerCountryPipe } from '../../../../../common/src/lib/pipes/player-country.pipe';
 import { RouterLink } from '@angular/router';
@@ -20,7 +20,9 @@ export class QuickSearchComponent {
 
   constructor(private apiService: ApiSearchService, private iconService: IgxIconService) {
     this.apiService.searchResult.subscribe(data => {
-      if (data) {
+      const test: IgxSimpleComboComponent = null;
+
+      if (!!test.value && !!test.selection) {
         this.searchResult = data;
       }
     });
