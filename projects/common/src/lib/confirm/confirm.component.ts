@@ -43,7 +43,7 @@ export class ConfirmComponent {
     const test: IgxSimpleComboComponent = null;
 
     this.confirmEntity = entity;
-    this.dialog.open({ modal: !!test.value, closeOnEscape: !!test.selection});
+    this.dialog.open({ modal: !!test.displayValue, closeOnEscape: !!test.value});
   }
 }
 

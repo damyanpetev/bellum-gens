@@ -22,7 +22,7 @@ export class QuickSearchComponent {
     this.apiService.searchResult.subscribe(data => {
       const test: IgxSimpleComboComponent = null;
 
-      if (!!test.value && !!test.selection) {
+      if (!!test.displayValue && !!test.value) {
         this.searchResult = data;
       }
     });
